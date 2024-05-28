@@ -1,4 +1,4 @@
-package project1;
+package project2;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -44,6 +44,8 @@ public class IndexPanel extends JPanel {
 	private JPanel idPanel;
 	private JLabel idLabel;
 	private JTextField inputId;
+	
+	// 사진 선택
 
 	// 로그인 버튼
 	private JButton loginBtn;
@@ -59,7 +61,7 @@ public class IndexPanel extends JPanel {
 
 	private void initObject() {
 		// 백그라운드 이미지 컴포넌트
-		backgroundImage = new ImageIcon("").getImage();
+		backgroundImage = new ImageIcon("img/Yellow.png").getImage();
 		backgeroundPanel = new JPanel();
 
 		// 보더 컴포넌트
@@ -97,7 +99,7 @@ public class IndexPanel extends JPanel {
 		// 보더 컴포넌트
 		borderPanel.setBounds(100, 60, 190, 380);
 		borderPanel.setLayout(null);
-		borderPanel.setBackground(Color.YELLOW);
+		borderPanel.setBackground(Color.WHITE);
 		borderPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK),"LOGIN"));
 		add(borderPanel);
 		

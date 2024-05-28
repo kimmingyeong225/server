@@ -1,4 +1,4 @@
-package project1;
+package project2;
 
 // 데이터를 가지고 오기 위한 인터페이스 (기능 인터페이스)
 

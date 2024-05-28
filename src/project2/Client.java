@@ -1,4 +1,4 @@
-package project1;
+package project2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -62,7 +62,7 @@ public class Client implements ClientService, ProtocolImpl {
 		clientFrame = new ClientFrame(this);
 		// Client의 화면 부분의 컴포넌트 가져오기
 		mainMessageBox = clientFrame.getMessagePanel().getMainMessageBox();
-		userList = clientFrame.getWaitingRoomPanel().getUserList();
+//		userList = clientFrame.getWaitingRoomPanel().getUserList();
 		roomList = clientFrame.getWaitingRoomPanel().getRoomList();
 		enterRoomBtn = clientFrame.getWaitingRoomPanel().getEnterRoomBtn();
 		makeRoomBtn = clientFrame.getWaitingRoomPanel().getMakeRoomBtn();
@@ -306,7 +306,7 @@ public class Client implements ClientService, ProtocolImpl {
 
 	@Override
 	public void clickSecreMessageBhn(String msg) {
-		String user = (String) clientFrame.getWaitingRoomPanel().getUserList().getSelectedValue();
+		String user = (String) clientFrame.getWaitingRoomPanel().getRoomList().getSelectedValue();
 		writer("SecretMessage/" + user + "/" + msg);
 
 	}
@@ -332,11 +332,7 @@ public class Client implements ClientService, ProtocolImpl {
 	public static void main(String[] args) {
 		new Client();
 	
-//		try {
-//			Socket socket = new Socket("localhost",10000);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+
 	
 	}
 

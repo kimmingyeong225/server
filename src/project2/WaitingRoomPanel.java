@@ -1,4 +1,4 @@
-package project1;
+package project2;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -21,16 +21,19 @@ import lombok.Data;
 // 대기실
 @Data
 public class WaitingRoomPanel extends JPanel implements ActionListener {
+	
 
 	private Image backgroundImage;
 	private JPanel backgroundJPanel;
+	
+	// 라벨 추가
 
 	private JPanel userListJPanel;
 	private JPanel roomListJPanel;
 	private JPanel roomBtnPanel;
 	private JPanel MessageJPanel;
 
-	private JList<String> userList;
+	//private JList<String> userList;
 	private JList<String> roomList;
 
 	private JTextField inputMsg;
@@ -40,7 +43,7 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 	private JButton outRoomBtn;
 	private JButton enterRoomBtn;
 
-	private Vector<String> userIdVector = new Vector<>();
+	//private Vector<String> userIdVector = new Vector<>();
 	private Vector<String> roomNameVector = new Vector<>();
 
 	private ClientService clientService;
@@ -61,7 +64,7 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 		roomBtnPanel = new JPanel();
 		MessageJPanel = new JPanel();
 
-		userList = new JList<>();
+		//userList = new JList<>();
 		roomList = new JList<>();
 
 		inputMsg = new JTextField();
@@ -76,14 +79,13 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 		setSize(getWidth(), getHeight());
 		setLayout(null);
 
-		userListJPanel.setBounds(50, 30, 120, 260);
-		userListJPanel.setBackground(Color.white);
-		userListJPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK, 3), "USER LIST"));
+//		userListJPanel.setBounds(50, 30, 120, 260);
+//		userListJPanel.setBackground(Color.white);
+//		userListJPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK, 3), "USER LIST"));
+//		userListJPanel.add(userList);
+//		add(userListJPanel);
 
-		userListJPanel.add(userList);
-		add(userListJPanel);
-
-		roomListJPanel.setBounds(230, 30, 120, 260);
+		roomListJPanel.setBounds(35, 30, 320, 400);
 		roomListJPanel.setBackground(Color.WHITE);
 		roomListJPanel.setBorder(new TitledBorder(new LineBorder(Color.BLACK, 3), "ROOM LIST"));
 		roomListJPanel.add(roomList);
@@ -140,7 +142,7 @@ public class WaitingRoomPanel extends JPanel implements ActionListener {
 			if (!msg.equals(null)) {
 				clientService.clickMessageBhn(msg);
 				inputMsg.setText("");
-				userList.setSelectedValue(null, false);
+//				userList.setSelectedValue(null, false);
 			}
 		} else if (e.getSource() == makeRoomBtn) {
 			String roomName = JOptionPane.showInputDialog("[방 이름 설정]");

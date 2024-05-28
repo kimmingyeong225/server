@@ -1,4 +1,4 @@
-package project1;
+package project2;
 
 // 서버측과 클라이언트측 둘 사이의 기능 인터페이스
 
