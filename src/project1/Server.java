@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-
 public class Server {
 
 	// 접속된 유저 벡터
@@ -79,6 +78,7 @@ public class Server {
 
 						// 연결을 대기 하다가 유저가 들어오면 유저 생성, 소켓으로 유저 구분 가능
 						ConnectedUser user = new ConnectedUser(socket);
+						Socket Socket = serverSocket.accept(); //
 						user.start();
 					} catch (Exception e) {
 						// 서버 중지
@@ -91,9 +91,10 @@ public class Server {
 
 	// 전체 접속된 유저에게 출력하는 것
 	private void broadCast(String msg) {
-		for (int i = 0; i < connectedUsers.size(); i++) {			
+		for (int i = 0; i < connectedUsers.size(); i++) {
 			ConnectedUser user = connectedUsers.elementAt(i);
-			user.writer(msg);
+			user.writer(msg);		
+
 		}
 	}
 

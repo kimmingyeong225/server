@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.StringTokenizer;
@@ -102,7 +103,7 @@ public class Client implements ClientService, ProtocolImpl {
 	private void connectNetwork() {
 		try {
 			socket = new Socket(ip, port);
-			
+
 		} catch (UnknownHostException e) {
 			JOptionPane.showMessageDialog(null, "접속 에러 !", "알림", JOptionPane.ERROR_MESSAGE, icon);
 		} catch (IOException e) {
@@ -119,8 +120,8 @@ public class Client implements ClientService, ProtocolImpl {
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-			Socket socket = new Socket("localhost",10000);
-			
+			Socket socket = new Socket("localhost", 10000);
+
 			// 입력 스레드
 			readThread();
 		} catch (UnknownHostException e) {
@@ -135,21 +136,21 @@ public class Client implements ClientService, ProtocolImpl {
 
 	private void readThread() {
 		new Thread(new Runnable() {
-			
+
 			@Override
 			public void run() {
-				while(true) {
+				while (true) {
 					try {
 						String msg = reader.readLine();
-						
+
 						checkProtocol(msg);
 					} catch (IOException e) {
-						JOptionPane.showMessageDialog(null, "클라이언트 입력 장치 에러 !" , "알림", JOptionPane.ERROR_MESSAGE, icon);
+						JOptionPane.showMessageDialog(null, "클라이언트 입력 장치 에러 !", "알림", JOptionPane.ERROR_MESSAGE, icon);
 						break;
-					}	
+					}
 				}
 			}
-		
+
 		}).start();
 	}
 
@@ -328,16 +329,9 @@ public class Client implements ClientService, ProtocolImpl {
 		writer("EnterRoom/" + roomName);
 	}
 
-	
 	public static void main(String[] args) {
 		new Client();
-	
-//		try {
-//			Socket socket = new Socket("localhost",10000);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-	
+
 	}
 
 }// end of class
