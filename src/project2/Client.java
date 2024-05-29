@@ -16,6 +16,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
+@Data
 public class Client implements ClientService, ProtocolImpl {
 
 	// 프레임 창
