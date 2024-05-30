@@ -1,4 +1,4 @@
-package project3;
+package project4;
 
 // 데이터를 가지고 오기 위한 인터페이스 (기능 인터페이스)
 
@@ -14,9 +14,5 @@ public interface ClientService {
 	void clickOutRoom(String roomName);
 
 	void clickEnterRoom(String roomName);
-	
-//	void clickLoginRoom(String roomName);
-//	
-//	void clickClient(String roomName);
 
 }

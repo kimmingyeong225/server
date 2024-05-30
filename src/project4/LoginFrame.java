@@ -1,4 +1,4 @@
-package project3;
+package project4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,24 +13,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import lombok.Data;
+import project3.ClickFrame;
 
 @Data
 public class LoginFrame extends JFrame {
 	private JTextField usernameField;
 	private JPasswordField passwordField;
-//    private JTextField portField;
 	private JButton loginButton;
 	private JButton connectButton;
 
-//    // 소켓 장치
-//    private ServerSocket serverSocket;
-//    private Socket socket;
-//    
-//    // 파일 저장을 위한 장치
-//    private FileWriter fileWriter;
-//    
-//    // 서버 프레임 (테스트)
-//    private ServerFrame serverFrame;
+
 
 	public LoginFrame() {
 		setTitle("Login");
@@ -61,14 +53,6 @@ public class LoginFrame extends JFrame {
 		loginButton.setBounds(10, 150, 250, 25);
 		panel.add(loginButton);
 
-//        JLabel portLabel = new JLabel("PORT NUMBER :");
-//        portLabel.setBounds(10, 70, 90, 25);
-//        panel.add(portLabel);
-//        
-//        portField = new JPasswordField(20);
-//        portField.setBounds(110, 70, 150, 25);
-//        panel.add(portField);
-
 		add(panel);
 		
 		// 테스트 코드 
@@ -98,33 +82,7 @@ public class LoginFrame extends JFrame {
 		});
 	}
 
-//    public void startServer() {
-//		try {
-//			// 서버 소켓 장치
-//			serverSocket = new ServerSocket(10000);
-//			serverViewAppendWriter("[알림] 서버 시작\n");
-//			serverFrame.getConnectBtn().setEnabled(false);
-////			connectClient();
-//
-//		} catch (IOException e) {
-//			JOptionPane.showMessageDialog(null, "이미 사용중인 포트입니다", "알림", JOptionPane.ERROR_MESSAGE);
-//			serverFrame.getConnectBtn().setEnabled(true);
-//		}
-//	}
-//
-//    private void serverViewAppendWriter(String str) {
-//    	try {
-//			fileWriter = new FileWriter("talk_log.txt", true);
-////			mainBoard.append(str);
-//			fileWriter.write(str);
-//			fileWriter.flush();
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//	}
+
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {

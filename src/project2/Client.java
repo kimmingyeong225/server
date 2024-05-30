@@ -16,6 +16,8 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
+import lombok.Data;
+
 @Data
 public class Client implements ClientService, ProtocolImpl {
 

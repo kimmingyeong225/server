@@ -47,7 +47,6 @@ public class Frame extends JFrame{
 					
 					// 채팅 창
 					messagePanel = new MessagePanel(mContext);
-					setTitle("도와줘요 안선생님!!");
 					setSize(FRAME_WIDTH, FRAME_HEIGHT); // 화면 사이즈
 					setContentPane(background);
 					setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 게임 창을 종료 시 프로그램 전체 종료
@@ -73,8 +72,7 @@ public class Frame extends JFrame{
 					
 				}
 				
-				// 상호작용 종류
-				// 1. 게임시작 2. 게임 종료 3. 설정 창 띄우기
+
 				private void addEventListener() {
 
 					addKeyListener(new KeyAdapter() {
@@ -178,11 +176,10 @@ public class Frame extends JFrame{
 )
 		// 셀프 참조
 		mContext = this;
-		// bgm 관리
-		bgmService = new BGMService();
+
 		// 사운드 설정 창 생성
 		soundSettingFrame = new SoundSettingFrame(mContext);
-		setTitle("도와줘요 안선생님!!");
+	
 		setSize(FRAME_WIDTH, FRAME_HEIGHT); // 화면 사이즈
 		setContentPane(background);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 게임 창을 종료 시 프로그램 전체 종료

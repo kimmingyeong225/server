@@ -1,12 +1,9 @@
-package project3;
+package project4;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
-
-import project2.SettingPanel;
 
 import lombok.Data;
 
@@ -16,7 +13,6 @@ public class ClientFrame extends JFrame {
 	
 	private JTabbedPane tapPane; // 탭
 	private JPanel mainPanel;
-	
 
 	// 로그인 창
 	private IndexPanel indexPanel;
@@ -42,7 +38,7 @@ public class ClientFrame extends JFrame {
 		indexPanel = new IndexPanel(clientservice);
 		waitingRoomPanel = new WaitingRoomPanel(clientservice);
 		messagePanel = new MessagePanel(clientservice);
-//		settingPanel = new SettingPanel(clientservice);
+		//settingPanel = new SettingPanel(clientservice);
 
 		tapPane = new JTabbedPane(JTabbedPane.TOP);
 		mainPanel = new JPanel();
@@ -61,9 +57,8 @@ public class ClientFrame extends JFrame {
 		setContentPane(mainPanel);
 
 		tapPane.setBounds(0, 0, getWidth(), getHeight());
-//		mainPanel.add(tapPane);
-		JLabel label = new JLabel("Welcome");
-		add(label);
+		mainPanel.add(tapPane);
+		
 		indexPanel.setLayout(null);
 		tapPane.addTab("로그인", null ,indexPanel, null);
 		tapPane.addTab("대기실", null, waitingRoomPanel, null);
