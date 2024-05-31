@@ -16,6 +16,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
+import lombok.Data;
+
+@Data
 public class Server {
 
 	// 접속된 유저 벡터
@@ -45,15 +48,15 @@ public class Server {
 	private ImageIcon icon = new ImageIcon("img/");
 
 	public Server() {
-		serverFrame = new ServerFrame(this);
+		//serverFrame = new ServerFrame(this);
 		roomCheck = true;
-		mainBoard = serverFrame.getMainBoard();
 	}
 
 	public void startServer() {
 		try {
 			// 서버 소켓 장치
 			serverSocket = new ServerSocket(10000);
+			mainBoard = serverFrame.getMainBoard();
 			serverViewAppendWriter("[알림] 서버 시작\n");
 			serverFrame.getConnectBtn().setEnabled(false);
 			connectClient();
@@ -78,7 +81,7 @@ public class Server {
 
 						// 연결을 대기 하다가 유저가 들어오면 유저 생성, 소켓으로 유저 구분 가능
 						ConnectedUser user = new ConnectedUser(socket);
-						Socket Socket = serverSocket.accept(); //
+						Socket Socket = serverSocket.accept();
 						user.start();
 					} catch (Exception e) {
 						// 서버 중지
@@ -91,10 +94,9 @@ public class Server {
 
 	// 전체 접속된 유저에게 출력하는 것
 	private void broadCast(String msg) {
-		for (int i = 0; i < connectedUsers.size(); i++) {
+		for (int i = 0; i < connectedUsers.size(); i++) {			
 			ConnectedUser user = connectedUsers.elementAt(i);
-			user.writer(msg);		
-
+			user.writer(msg);
 		}
 	}
 

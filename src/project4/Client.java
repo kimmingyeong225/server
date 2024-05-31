@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.StringTokenizer;
@@ -60,7 +59,7 @@ public class Client implements ClientService, ProtocolImpl {
 	private ImageIcon icon = new ImageIcon("");
 
 	public Client() {
-		clientFrame = new ClientFrame(this);
+		 clientFrame = new ClientFrame(this);
 		// Client의 화면 부분의 컴포넌트 가져오기
 		mainMessageBox = clientFrame.getMessagePanel().getMainMessageBox();
 		userList = clientFrame.getWaitingRoomPanel().getUserList();
@@ -76,6 +75,7 @@ public class Client implements ClientService, ProtocolImpl {
 	// id를 서버로 보내고, 화면 부분의 제목을 변경하고, 버튼을 활성화한다.
 	@Override
 	public void clickConnectServerBhn(String ip, int port, String id) {
+		
 		this.ip = ip;
 		this.port = port;
 		this.id = id;

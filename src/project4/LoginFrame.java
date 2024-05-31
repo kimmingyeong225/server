@@ -13,7 +13,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import lombok.Data;
-import project3.ClickFrame;
 
 @Data
 public class LoginFrame extends JFrame {
@@ -56,7 +55,9 @@ public class LoginFrame extends JFrame {
 		add(panel);
 		
 		// 테스트 코드 
+		usernameField.setText("민경");
 		passwordField.setText("123"); 
+		
 		
 
 		loginButton.addActionListener(new ActionListener() {
@@ -85,11 +86,6 @@ public class LoginFrame extends JFrame {
 
 
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				new LoginFrame().setVisible(true);
-
-			}
-		});
+		(new LoginFrame()).setVisible(true);;
 	}
 }

@@ -18,8 +18,11 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class ServerFrame extends JFrame {
 
 	private Server mContext;
@@ -40,6 +43,7 @@ public class ServerFrame extends JFrame {
 
 	public ServerFrame(Server mContext) {
 		this.mContext = mContext;
+		mContext.setServerFrame(this);
 		initObject();
 		initSetting();
 		initListener();

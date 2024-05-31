@@ -61,7 +61,7 @@ public class ClientFrame extends JFrame {
 		
 		indexPanel.setLayout(null);
 		tapPane.addTab("로그인", null ,indexPanel, null);
-		tapPane.addTab("대기실", null, waitingRoomPanel, null);
+		tapPane.addTab("채팅방", null, waitingRoomPanel, null);
 		tapPane.addTab("채팅", null, messagePanel, null);
 		//tapPane.addTab("설정", null, settingPanel, null);
 		

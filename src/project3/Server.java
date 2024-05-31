@@ -79,6 +79,7 @@ public class Server {
 
 						// 연결을 대기 하다가 유저가 들어오면 유저 생성, 소켓으로 유저 구분 가능
 						ConnectedUser user = new ConnectedUser(socket);
+						Socket Socket = serverSocket.accept();
 						user.start();
 					} catch (Exception e) {
 						// 서버 중지
